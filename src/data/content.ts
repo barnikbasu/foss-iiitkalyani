@@ -73,7 +73,7 @@ export const CLUB_METADATA = {
   fossUnitedChapter: 'https://fossunited.org/c/iiit-kalyani',
   email: 'fossclub.iiitkalyani@gmail.com',
   stats: [
-    { label: 'FOUNDED', value: '03 / 2024', sub: 'March 2024 Charter' },
+    { label: 'FOUNDED', value: '03 / 2024', sub: 'March 2024 Chapter' },
     { label: 'DOCUMENTED MEETS', value: '07+', sub: 'Workshops & Bootcamps' },
     { label: 'OPEN SOURCE', value: '100%', sub: 'Software Freedom' },
     { label: 'CAMPUS CHAPTER', value: '2026–27', sub: 'Active Term' },
@@ -265,8 +265,8 @@ export const VERIFIED_EVENTS: EventItem[] = [
     categoryBadge: 'INAUGURAL CHAPTER MEET',
     venueBadge: 'Foundation',
     description:
-      'Foundational chapter launch introducing GNU/Linux distributions, kernel philosophy, software freedom ethics, and initial community formation leading to our March 2024 charter.',
-    highlights: ['Linux workstation bootstrapper', 'The 4 Essential Freedoms of FOSS', 'Community charter genesis'],
+      'Foundational chapter launch introducing GNU/Linux distributions, kernel philosophy, software freedom ethics, and initial community formation leading to our March 2024 chapter.',
+    highlights: ['Linux workstation bootstrapper', 'The 4 Essential Freedoms of FOSS', 'Community chapter genesis'],
     status: 'Completed',
     startDateValue: '20240119',
     endDateValue: '20240120',
@@ -426,10 +426,10 @@ export const SIX_PILLARS = [
 export const CHRONOLOGY = [
   {
     year: '2024',
-    title: 'Inception & Charter',
+    title: 'Inception & Chapter',
     badge: 'Year 01',
     description:
-      'Charter established at IIIT Kalyani. Executed inaugural FOSS Foundation 1.0, hosted regional Kalyani FOSS March Meetup, and initiated the FOSS On-Air interactive broadcast series.',
+      'Chapter established at IIIT Kalyani. Executed inaugural FOSS Foundation 1.0, hosted regional Kalyani FOSS March Meetup, and initiated the FOSS On-Air interactive broadcast series.',
   },
   {
     year: '2025',

@@ -53,7 +53,7 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
     lines: [
       { prompt: true, text: '$ foss-united-cli status --chapter iiit-kalyani' },
       { prompt: false, text: 'Chapter Name: FOSS Club IIIT Kalyani' },
-      { prompt: false, text: 'Charter Term: 2024–27 | Status: ACTIVE & VERIFIED' },
+      { prompt: false, text: 'Chapter Term: 2024–27 | Status: ACTIVE & VERIFIED' },
       { prompt: false, text: 'Location: Kalyani, Nadia District, West Bengal' },
       {
         prompt: false,
@@ -165,7 +165,7 @@ export const Hero: React.FC = () => {
                 <div className="text-[10px] sm:text-xs font-mono text-zinc-400 uppercase tracking-wider mt-0.5 truncate">
                   March 2024
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">Charter Founded</div>
+                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">Chapter Founded</div>
               </div>
 
               <div>

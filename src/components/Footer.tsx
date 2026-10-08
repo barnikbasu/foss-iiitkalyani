@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
               </div>
               <div>{CLUB_METADATA.location}</div>
               <div className="text-emerald-500/90 pt-1">
-                Charter Established: March 2024
+                Chapter Established: March 2024
               </div>
             </div>
           </div>
