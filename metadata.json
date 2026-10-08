@@ -1,6 +1,0 @@
-{
-  "name": "FOSS Club IIIT Kalyani",
-  "description": "Official website of FOSS Club IIIT Kalyani – Free and Open Source Software Club of Indian Institute of Information Technology Kalyani, affiliated with FOSS United.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
