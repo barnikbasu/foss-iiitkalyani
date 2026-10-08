@@ -10,6 +10,9 @@ export interface EventItem {
   highlights?: string[];
   link?: string;
   status: 'Completed';
+  startDateValue: string; // YYYYMMDD
+  endDateValue: string;   // YYYYMMDD (exclusive per RFC 5545)
+  location: string;
 }
 
 export interface InitiativeItem {
@@ -169,6 +172,9 @@ export const VERIFIED_EVENTS: EventItem[] = [
       'Repository hygiene, issue triage & upstream workflows',
     ],
     status: 'Completed',
+    startDateValue: '20251120',
+    endDateValue: '20251122',
+    location: 'IIIT Kalyani, Kalyani, West Bengal, India',
   },
   {
     id: 'intro-foss-gcc-2025',
@@ -182,6 +188,9 @@ export const VERIFIED_EVENTS: EventItem[] = [
       'Demystifying GNU Compiler Collections: preprocessing stages, compilation, assembly, static vs dynamic linking, optimization flags, and C/C++ build pipelines.',
     highlights: ['GCC pipeline stages', 'Static vs Shared (.so) libraries', 'Debugging with GDB flags'],
     status: 'Completed',
+    startDateValue: '20251016',
+    endDateValue: '20251017',
+    location: 'IIIT Kalyani, Kalyani, West Bengal, India',
   },
   {
     id: 'foss-foundation-2-2025',
@@ -195,6 +204,9 @@ export const VERIFIED_EVENTS: EventItem[] = [
       'Intensive 3-day deep dive into open-source software lifecycles, licensing mechanics, reproducible development environments, and structured student PR tracks.',
     highlights: ['3-day hands-on tracks', 'Open source licensing primer', 'First good issue mentorship'],
     status: 'Completed',
+    startDateValue: '20250205',
+    endDateValue: '20250208',
+    location: 'IIIT Kalyani, Kalyani, West Bengal, India',
   },
   {
     id: 'foss-on-air-cybersec-2024',
@@ -208,6 +220,9 @@ export const VERIFIED_EVENTS: EventItem[] = [
       'Security auditing, responsible vulnerability disclosure, cryptographic integrity, SBOMs (Software Bill of Materials), and hardening community-maintained open source bases.',
     highlights: ['Vulnerability triage', 'GPG key signatures', 'Open-source supply chain safety'],
     status: 'Completed',
+    startDateValue: '20240725',
+    endDateValue: '20240726',
+    location: 'Online Broadcast · IIIT Kalyani, Kalyani, West Bengal, India',
   },
   {
     id: 'foss-on-air-hoppscotch-2024',
@@ -221,6 +236,9 @@ export const VERIFIED_EVENTS: EventItem[] = [
       'Exploring API testing with modern open-source tooling, architecture review of high-performance TypeScript web applications, and real-time network debugging.',
     highlights: ['Open source API development', 'TypeScript web client architecture', 'Live interactive test flows'],
     status: 'Completed',
+    startDateValue: '20240605',
+    endDateValue: '20240606',
+    location: 'Online Broadcast · IIIT Kalyani, Kalyani, West Bengal, India',
   },
   {
     id: 'kalyani-foss-march-2024',
@@ -234,6 +252,9 @@ export const VERIFIED_EVENTS: EventItem[] = [
       'Regional cross-campus developer convention uniting students, open-source contributors, and software engineers from Kalyani and surrounding engineering colleges.',
     highlights: ['Inauguration of monthly chapter talks', 'Cross-college networking', 'Lightning project demos'],
     status: 'Completed',
+    startDateValue: '20240318',
+    endDateValue: '20240319',
+    location: 'IIIT Kalyani, Kalyani, West Bengal, India',
   },
   {
     id: 'foss-foundation-1-2024',
@@ -247,6 +268,9 @@ export const VERIFIED_EVENTS: EventItem[] = [
       'Foundational chapter launch introducing GNU/Linux distributions, kernel philosophy, software freedom ethics, and initial community formation leading to our March 2024 charter.',
     highlights: ['Linux workstation bootstrapper', 'The 4 Essential Freedoms of FOSS', 'Community charter genesis'],
     status: 'Completed',
+    startDateValue: '20240119',
+    endDateValue: '20240120',
+    location: 'IIIT Kalyani, Kalyani, West Bengal, India',
   },
 ];
 
