@@ -147,7 +147,7 @@ export const Navbar: React.FC = () => {
 
           {/* Right Action Controls */}
           <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
-            {/* GitHub Repo Count Badge */}
+            {/* GitHub Repo Link Badge */}
             <a
               href="https://github.com/FOSS-Club-IIIT-Kalyani"
               target="_blank"
@@ -156,7 +156,10 @@ export const Navbar: React.FC = () => {
               title="View GitHub Organization"
             >
               <Github className="w-3.5 h-3.5 text-zinc-400" />
-              <span>07+ Repos</span>
+              <span className="inline-flex items-center gap-1">
+                <span>GitHub</span>
+                <span className="text-zinc-500 group-hover:text-zinc-300 text-[11px] leading-none">↗</span>
+              </span>
             </a>
 
             {/* Join Community Button */}
