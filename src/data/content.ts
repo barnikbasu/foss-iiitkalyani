@@ -64,7 +64,7 @@ export const CLUB_METADATA = {
   tagline: 'Build. Contribute. Collaborate.',
   officialMotto: '“A society promoting quality Free and Open Source Software and Software Freedom.”',
   description:
-    'FOSS Club IIIT Kalyani is a student-led engineering collective dedicated to digital sovereignty, upstream collaboration, and practical software craftsmanship. We inspect the machine from kernel to userspace and ship code in the open.',
+    'FOSS Club IIIT Kalyani is a student-led community promoting Free and Open Source Software, software freedom, and practical open-source collaboration. Learn, build, contribute, and share in the open.',
   established: 'March 2024',
   location: 'Kalyani, Nadia District, West Bengal - 741235, India',
   institute: 'Indian Institute of Information Technology Kalyani',

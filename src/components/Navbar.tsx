@@ -106,16 +106,16 @@ export const Navbar: React.FC = () => {
           {/* Brand Logo & Name */}
           <a
             href="#"
-            className="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md p-1 min-w-0"
+            className="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md p-1 shrink-0"
             aria-label="FOSS Club IIIT Kalyani - Home"
           >
             <FossClubLogo size={32} className="transition-transform duration-200 group-hover:scale-105 shrink-0" />
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2 truncate">
-              <span className="font-bold text-sm sm:text-base lg:text-lg tracking-tight text-white flex items-center gap-1 font-mono truncate">
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2 shrink-0">
+              <span className="font-bold text-sm sm:text-base lg:text-lg tracking-tight text-white flex items-center gap-1 font-mono whitespace-nowrap shrink-0">
                 FOSS Club
-                <span className="text-zinc-400 font-normal truncate">IIIT Kalyani</span>
+                <span className="text-zinc-400 font-normal whitespace-nowrap shrink-0">IIIT Kalyani</span>
               </span>
-              <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[9px] sm:text-[10px] font-mono tracking-wider bg-zinc-800/90 text-emerald-400 border border-zinc-700/80 w-fit shrink-0">
+              <span className="hidden sm:inline-flex items-center px-1.5 py-0.2 rounded text-[9px] sm:text-[10px] font-mono tracking-wider bg-zinc-800/90 text-emerald-400 border border-zinc-700/80 w-fit shrink-0 whitespace-nowrap">
                 STUDENT CHAPTER
               </span>
             </div>
@@ -124,7 +124,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden lg:flex items-center space-x-1 text-sm font-medium text-zinc-300"
+            className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 text-xs xl:text-sm font-medium text-zinc-300"
           >
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.replace('#', '');
@@ -133,7 +133,7 @@ export const Navbar: React.FC = () => {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleLinkClick(e, item.href)}
-                  className={`px-3 py-1.5 rounded-md transition-all text-sm font-mono focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                  className={`px-2.5 xl:px-3 py-1.5 rounded-md transition-all text-xs xl:text-sm font-mono whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
                     isActive
                       ? 'text-emerald-400 bg-emerald-950/40 border border-emerald-500/30'
                       : 'hover:text-white hover:bg-zinc-800/50'
@@ -146,13 +146,13 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Right Action Controls */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
             {/* GitHub Repo Count Badge */}
             <a
               href="https://github.com/FOSS-Club-IIIT-Kalyani"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#14171b] border border-zinc-800 hover:border-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#14171b] border border-zinc-800 hover:border-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 shrink-0"
               title="View GitHub Organization"
             >
               <Github className="w-3.5 h-3.5 text-zinc-400" />
@@ -163,7 +163,7 @@ export const Navbar: React.FC = () => {
             <a
               href="#community"
               onClick={(e) => handleLinkClick(e, '#community')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-semibold font-mono tracking-wide bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-sm hover:shadow-emerald-600/20 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              className="inline-flex items-center gap-1.5 px-3 xl:px-3.5 py-1.5 rounded-md text-xs font-semibold font-mono tracking-wide bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-sm hover:shadow-emerald-600/20 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 shrink-0 whitespace-nowrap"
             >
               <span>Join Community</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

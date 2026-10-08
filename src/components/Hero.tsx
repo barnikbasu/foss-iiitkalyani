@@ -19,16 +19,15 @@ interface TerminalScript {
 const TERMINAL_SCRIPTS: TerminalScript[] = [
   {
     id: 'git',
-    label: 'git: clone & build',
+    label: 'git: clone & workflow',
     lines: [
-      { prompt: true, text: '$ git clone https://github.com/FOSS-Club-IIIT-Kalyani/community.git' },
-      { prompt: false, text: "Cloning into 'community'... done (24 objects)." },
-      { prompt: true, text: '$ cd community && git checkout -b contribute-2026' },
-      { prompt: false, text: "Switched to branch 'contribute-2026'" },
-      { prompt: true, text: '$ ./build-something-awesome.sh' },
+      { prompt: true, text: '$ git clone https://github.com/FOSS-Club-IIIT-Kalyani' },
+      { prompt: true, text: '$ cd foss-club-iiit-kalyani' },
+      { prompt: false, text: '> exploring the chapter repositories...' },
+      { prompt: false, text: '> contribution workflow ready' },
       {
         prompt: false,
-        text: '[SUCCESS] Connected to FOSS United Chapter: Kalyani [active]',
+        text: '[READY] Connected to FOSS United Chapter: Kalyani',
         highlight: true,
       },
     ],
@@ -37,20 +36,20 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
     id: 'gcc',
     label: 'gcc: toolchain',
     lines: [
-      { prompt: true, text: '$ g++ -Wall -O3 src/engine.cpp -o build/foss-core' },
-      { prompt: false, text: '[gcc-13.2] parsing AST trees... 0 warnings generated.' },
+      { prompt: true, text: '$ g++ -Wall -O3 src/main.cpp -o build/foss-core' },
+      { prompt: false, text: '[gcc] inspecting compilation stages... 0 warnings' },
       { prompt: true, text: '$ ./build/foss-core --check-license' },
       { prompt: false, text: 'SPDX-License-Identifier: MIT / Apache-2.0' },
       {
         prompt: false,
-        text: '[VERIFIED] 100% Free & Open Source Software artifact compiled.',
+        text: '[READY] 100% Free & Open Source toolchain in action',
         highlight: true,
       },
     ],
   },
   {
     id: 'status',
-    label: 'chapter: telemetry',
+    label: 'chapter: verified-status',
     lines: [
       { prompt: true, text: '$ foss-united-cli status --chapter iiit-kalyani' },
       { prompt: false, text: 'Chapter Name: FOSS Club IIIT Kalyani' },
@@ -58,7 +57,7 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
       { prompt: false, text: 'Location: Kalyani, Nadia District, West Bengal' },
       {
         prompt: false,
-        text: '[READY] Open for student PRs, weekly meetups & grant nominations.',
+        text: '[READY] Open for student collaboration & verified meetups',
         highlight: true,
       },
     ],
@@ -90,7 +89,7 @@ export const Hero: React.FC = () => {
   }, [activeScriptId, activeScript.lines.length]);
 
   const copyCloneCommand = () => {
-    navigator.clipboard.writeText('git clone https://github.com/FOSS-Club-IIIT-Kalyani/community.git');
+    navigator.clipboard.writeText('git clone https://github.com/FOSS-Club-IIIT-Kalyani');
     setCopied(true);
     setTimeout(() => setCopied(false), 2200);
   };
@@ -264,17 +263,17 @@ export const Hero: React.FC = () => {
                 )}
               </div>
 
-              {/* Live Repository Graph & Commit Log Area */}
+              {/* Contribution Workflow Architecture Area */}
               <div className="border-t border-[#1f242c] bg-[#121519] p-4">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span className="text-xs font-mono text-zinc-300 font-semibold tracking-wider">
-                      LIVE REPOSITORY GRAPH
+                      CONTRIBUTION GRAPH
                     </span>
                   </div>
                   <span className="text-[11px] font-mono text-zinc-500">
-                    origin/main
+                    workflow cycle
                   </span>
                 </div>
 
@@ -283,30 +282,30 @@ export const Hero: React.FC = () => {
                   <GitBranchGraphic />
                 </div>
 
-                {/* Recent Commits Log */}
+                {/* Contribution Stages Guide */}
                 <div className="space-y-1.5 font-mono text-[11px]">
                   <div className="flex items-center justify-between text-zinc-400 hover:text-zinc-200 transition-colors">
                     <div className="flex items-center gap-2 truncate">
-                      <span className="text-emerald-400 font-semibold shrink-0">c0ffee1</span>
-                      <span className="truncate text-zinc-300">feat: init 2026-27 student roadmap</span>
+                      <span className="text-emerald-400 font-semibold shrink-0">step 01</span>
+                      <span className="truncate text-zinc-300">issue triage &amp; local fork setup</span>
                     </div>
-                    <span className="text-zinc-500 text-[10px] shrink-0 ml-2">just now</span>
+                    <span className="text-emerald-400/90 text-[10px] shrink-0 ml-2 font-mono">prepare</span>
                   </div>
 
                   <div className="flex items-center justify-between text-zinc-400 hover:text-zinc-200 transition-colors">
                     <div className="flex items-center gap-2 truncate">
-                      <span className="text-zinc-500 font-semibold shrink-0">4a6f23d</span>
-                      <span className="truncate">docs: welcome-first-time-contributors.guide</span>
+                      <span className="text-emerald-400 font-semibold shrink-0">step 02</span>
+                      <span className="truncate text-zinc-300">topic branch &amp; clean atomic commits</span>
                     </div>
-                    <span className="text-zinc-500 text-[10px] shrink-0 ml-2">2d ago</span>
+                    <span className="text-zinc-400 text-[10px] shrink-0 ml-2 font-mono">develop</span>
                   </div>
 
                   <div className="flex items-center justify-between text-zinc-400 hover:text-zinc-200 transition-colors">
                     <div className="flex items-center gap-2 truncate">
-                      <span className="text-zinc-500 font-semibold shrink-0">d83eb82</span>
-                      <span className="truncate">release: GCC/Git/Linux Bootcamp materials</span>
+                      <span className="text-emerald-400 font-semibold shrink-0">step 03</span>
+                      <span className="truncate text-zinc-300">pull request &amp; upstream collaboration</span>
                     </div>
-                    <span className="text-zinc-500 text-[10px] shrink-0 ml-2">nov 2025</span>
+                    <span className="text-zinc-400 text-[10px] shrink-0 ml-2 font-mono">upstream</span>
                   </div>
                 </div>
               </div>

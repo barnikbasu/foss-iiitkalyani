@@ -190,14 +190,14 @@ export const GitBranchGraphic: React.FC<{ className?: string }> = ({ className =
       />
 
       {/* Text labels */}
-      <text x="32" y="72" fill="#64748b" fontSize="9" fontFamily="monospace">
-        root: init
+      <text x="24" y="72" fill="#64748b" fontSize="8.5" fontFamily="monospace">
+        main branch
       </text>
-      <text x="145" y="14" fill="#22c55e" fontSize="9" fontFamily="monospace" fontWeight="600">
-        PR #24: student-handbook
+      <text x="180" y="14" textAnchor="middle" fill="#22c55e" fontSize="8" fontFamily="monospace" fontWeight="600">
+        CONTRIBUTION WORKFLOW: issue → branch → commit → pull request
       </text>
-      <text x="270" y="72" fill="#22c55e" fontSize="9" fontFamily="monospace">
-        HEAD -&gt; main
+      <text x="270" y="72" fill="#22c55e" fontSize="8.5" fontFamily="monospace">
+        merge upstream
       </text>
     </svg>
   );
