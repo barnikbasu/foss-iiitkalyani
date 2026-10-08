@@ -1,6 +1,6 @@
 import React from 'react';
 import { LEADERSHIP } from '../data/content';
-import { Github, ShieldCheck, Building2, ExternalLink } from 'lucide-react';
+import { Linkedin, ShieldCheck, Building2, ExternalLink } from 'lucide-react';
 
 export const Team: React.FC = () => {
   return (
@@ -27,10 +27,19 @@ export const Team: React.FC = () => {
               className="rounded-xl bg-[#101317] border border-[#20252e] p-6 hover:border-emerald-500/40 hover:bg-[#13171d] transition-all flex flex-col justify-between group"
             >
               <div>
-                {/* Header: Avatar Initial Box + Role Badge */}
+                {/* Header: Photo Box + Role Badge */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-14 h-14 rounded-lg bg-[#181c22] border border-zinc-700/80 flex items-center justify-center font-mono font-bold text-lg text-emerald-400 group-hover:border-emerald-500/50 transition-colors shadow-inner">
-                    {leader.initials}
+                  <div className="w-14 h-14 rounded-lg bg-[#181c22] border border-zinc-700/80 overflow-hidden flex items-center justify-center font-mono font-bold text-lg text-emerald-400 group-hover:border-emerald-500/50 transition-colors shadow-inner shrink-0">
+                    {leader.image ? (
+                      <img
+                        src={leader.image}
+                        alt={`${leader.name} photo`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      leader.initials
+                    )}
                   </div>
 
                   <span className="inline-block text-xs font-mono px-2.5 py-1 rounded bg-[#161a20] text-emerald-400 border border-zinc-800">
@@ -64,16 +73,16 @@ export const Team: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action Link to GitHub Org */}
+              {/* Action Link to Profile */}
               <div className="pt-4 border-t border-[#1d222a] flex items-center justify-between">
                 <a
-                  href={leader.githubUrl}
+                  href={leader.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-300 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded px-1"
                 >
-                  <Github className="w-3.5 h-3.5 text-zinc-400" />
-                  <span>GitHub Profile</span>
+                  <Linkedin className="w-3.5 h-3.5 text-zinc-400" />
+                  <span>Linkedin Profile</span>
                   <ExternalLink className="w-3 h-3 text-zinc-500" />
                 </a>
 

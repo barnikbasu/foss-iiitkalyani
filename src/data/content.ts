@@ -47,7 +47,9 @@ export interface LeaderItem {
   bio: string;
   tags: string[];
   initials: string;
-  githubUrl: string;
+  githubUrl?: string;
+  linkedinUrl: string;
+  image: string;
 }
 
 export interface SocialLinkItem {
@@ -373,7 +375,8 @@ export const LEADERSHIP: LeaderItem[] = [
     bio: 'Guiding chapter operations, technical bootcamps, and developer outreach. Focus areas include Linux toolchains, modern systems programming, and student upstream onboarding.',
     tags: ['Toolchains', 'Systems', 'Chapter Ops'],
     initials: 'AL',
-    githubUrl: 'https://github.com/FOSS-Club-IIIT-Kalyani',
+    linkedinUrl: 'https://in.linkedin.com/in/ayush-lahiri',
+    image: 'https://fossunited.org/files/profile_9ju5ff1tu4885ff3885ff3.webp',
   },
   {
     name: 'Sahil Sujit Singh',
@@ -383,7 +386,8 @@ export const LEADERSHIP: LeaderItem[] = [
     bio: 'Founding-era mentorship, architectural reviews, and connecting student projects with national open-source foundations, student grants, and upstream hackathons.',
     tags: ['Architecture', 'Mentorship', 'RFCs'],
     initials: 'SS',
-    githubUrl: 'https://github.com/FOSS-Club-IIIT-Kalyani',
+    linkedinUrl: 'https://in.linkedin.com/in/sahilssingh04',
+    image: 'https://fossunited.org/files/profile_5lfqht07c07931ec.webp',
   },
 ];
 
