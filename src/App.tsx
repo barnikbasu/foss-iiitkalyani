@@ -1,0 +1,67 @@
+import React, { useState } from 'react';
+import { StatusTicker } from './components/StatusTicker';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { About } from './components/About';
+import { Values } from './components/Values';
+import { Events } from './components/Events';
+import { Initiatives } from './components/Initiatives';
+import { Projects } from './components/Projects';
+import { Team } from './components/Team';
+import { CommunityCTA } from './components/CommunityCTA';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { ProjectSubmitModal } from './components/ProjectSubmitModal';
+
+export default function App() {
+  const [pitchModalOpen, setPitchModalOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-[#0b0d0e] text-[#e2e8f0] selection:bg-emerald-500 selection:text-black">
+      {/* Top chapter status ticker bar */}
+      <StatusTicker />
+
+      {/* Main navigation header */}
+      <Navbar />
+
+      {/* Main Landing Sections */}
+      <main id="main-content">
+        {/* Hero with interactive terminal & git graph */}
+        <Hero />
+
+        {/* 01. Chapter Overview */}
+        <About />
+
+        {/* 02. The Ethos: Why Free & Open Source */}
+        <Values />
+
+        {/* 03. Activity Log: Documented Chapter Events */}
+        <Events />
+
+        {/* 04. Ongoing Programs: More Than Events */}
+        <Initiatives onOpenPitchModal={() => setPitchModalOpen(true)} />
+
+        {/* 05. Source Repositories: Built by the Community */}
+        <Projects onOpenPitchModal={() => setPitchModalOpen(true)} />
+
+        {/* 06. People & Governance: Chapter Leadership */}
+        <Team />
+
+        {/* 07. Get Involved: Community CTA Banner */}
+        <CommunityCTA />
+
+        {/* 08. Direct Access Directory: Connect with the Chapter */}
+        <Contact />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Student Project Submission / RFC Modal */}
+      <ProjectSubmitModal
+        isOpen={pitchModalOpen}
+        onClose={() => setPitchModalOpen(false)}
+      />
+    </div>
+  );
+}
