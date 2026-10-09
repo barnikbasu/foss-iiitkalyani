@@ -24,10 +24,10 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
       { prompt: true, text: '$ git clone https://github.com/FOSS-Club-IIIT-Kalyani' },
       { prompt: true, text: '$ cd foss-club-iiit-kalyani' },
       { prompt: false, text: '> exploring the chapter repositories...' },
-      { prompt: false, text: '> contribution workflow ready' },
+      { prompt: false, text: '> contribution workflow setup complete' },
       {
         prompt: false,
-        text: '[READY] Connected to FOSS United Chapter: Kalyani',
+        text: '[DEMO] Ready for student contributions & PRs',
         highlight: true,
       },
     ],
@@ -42,7 +42,7 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
       { prompt: false, text: 'SPDX-License-Identifier: MIT / Apache-2.0' },
       {
         prompt: false,
-        text: '[READY] Open Source toolchain in action',
+        text: '[DEMO] Open-source build pipeline verified',
         highlight: true,
       },
     ],
@@ -57,7 +57,7 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
       { prompt: false, text: 'Location: Kalyani, Nadia District, West Bengal' },
       {
         prompt: false,
-        text: '[READY] Open for student collaboration & verified meetups',
+        text: '[ACTIVE] Open for student collaboration & meetups',
         highlight: true,
       },
     ],
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" aria-labelledby="hero-heading" className="scroll-mt-24 relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-[#1b1f26]">
+    <section id="home" aria-labelledby="hero-heading" className="scroll-mt-24 relative pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-10 md:pb-20 overflow-hidden border-b border-[#1b1f26]">
       {/* Subtle background ambient mesh */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
           {/* Left Column: Heading, Mission & CTAs */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Monospace Source Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#13161a] border border-[#232830] text-emerald-400 font-mono text-xs w-fit mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#13161a] border border-[#232830] text-emerald-400 font-mono text-xs w-fit mb-5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>&gt; SRC: ROOT &gt;&gt; &quot;SOFTWARE_FREEDOM&quot;</span>
             </div>
@@ -124,13 +124,13 @@ export const Hero: React.FC = () => {
               {CLUB_METADATA.description}
             </p>
 
-            {/* Primary Action Buttons */}
+            {/* Primary Action Buttons: Join Community (Primary), GitHub (Secondary), Telegram (Quieter) */}
             <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-10">
               <a
                 href="#community"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold font-mono bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-950/60 transition-all active:scale-95 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
-                <span>Explore the community</span>
+                <span>Join Community</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
 
@@ -141,7 +141,7 @@ export const Hero: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold font-mono bg-[#14171b] hover:bg-[#1b1f25] border border-zinc-700/80 hover:border-zinc-600 text-zinc-200 hover:text-white transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
                 <Github className="w-4 h-4 text-zinc-300" />
-                <span>Join us on GitHub</span>
+                <span>Explore GitHub</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />
               </a>
 
@@ -149,10 +149,10 @@ export const Hero: React.FC = () => {
                 href="https://t.me/fossclubiiitkalyani"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-lg text-sm font-mono text-zinc-400 hover:text-emerald-400 hover:bg-zinc-800/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-3 rounded-lg text-xs font-mono text-zinc-400 hover:text-emerald-400 hover:bg-zinc-800/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
                 <Send className="w-3.5 h-3.5 text-emerald-500" />
-                <span>Join Telegram ↗</span>
+                <span>Telegram ↗</span>
               </a>
             </div>
 
@@ -199,29 +199,34 @@ export const Hero: React.FC = () => {
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ef4444]/80 shrink-0 inline-block"></span>
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#eab308]/80 shrink-0 inline-block"></span>
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#22c55e]/80 shrink-0 inline-block"></span>
-                  <span className="ml-1 sm:ml-2 font-mono text-[11px] sm:text-xs text-zinc-400 font-medium truncate max-w-[130px] sm:max-w-none">
-                    CORE: FOSS-CLUB-IIIT-KALYANI ~ GIT
+                  <span className="ml-1 sm:ml-2 font-mono text-[11px] sm:text-xs text-zinc-400 font-medium truncate">
+                    TERMINAL
                   </span>
                 </div>
-                <button
-                  type="button"
-                  onClick={copyCloneCommand}
-                  className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-zinc-800/80 hover:bg-zinc-700 text-[11px] font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
-                  title="Copy git clone command"
-                  aria-label="Copy git clone command"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3 h-3 text-emerald-400" />
-                      <span className="text-emerald-400">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3 h-3 text-zinc-400" />
-                      <span>Copy</span>
-                    </>
-                  )}
-                </button>
+                <div className="flex items-center gap-2">
+                  <span className="hidden sm:inline-flex px-1.5 py-0.5 rounded text-[9px] font-mono text-zinc-400 bg-zinc-800/60 border border-zinc-700/60 uppercase">
+                    Illustration
+                  </span>
+                  <button
+                    type="button"
+                    onClick={copyCloneCommand}
+                    className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-zinc-800/80 hover:bg-zinc-700 text-[11px] font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                    title="Copy git clone command"
+                    aria-label="Copy git clone command"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="w-3 h-3 text-emerald-400" />
+                        <span className="text-emerald-400">Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3 h-3 text-zinc-400" />
+                        <span>Copy</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
 
               {/* Terminal Tabs */}
@@ -244,6 +249,10 @@ export const Hero: React.FC = () => {
 
               {/* Terminal Screen Body */}
               <div className="p-3.5 sm:p-5 font-mono text-xs text-zinc-300 space-y-2 bg-[#0c0e11] min-h-[175px] overflow-x-hidden">
+                <div className="text-[10px] text-zinc-500 font-mono pb-1 border-b border-zinc-900 flex items-center justify-between">
+                  <span>// simulated CLI session for demonstration</span>
+                  <span className="text-zinc-600">bash</span>
+                </div>
                 {activeScript.lines.slice(0, visibleLinesCount).map((line, idx) => (
                   <div
                     key={idx}
