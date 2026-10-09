@@ -3,7 +3,6 @@ import { FossClubLogo } from './Logos';
 import { Menu, X, ArrowUpRight, Github } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Values', href: '#values' },
   { label: 'Events', href: '#events' },
@@ -151,31 +150,33 @@ export const Navbar: React.FC = () => {
           : 'bg-[#0b0d0e]/85 backdrop-blur-sm border-transparent py-3.5 sm:py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Brand Logo & Name */}
-          <a
-            href="#home"
-            onClick={handleHomeClick}
-            className="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md p-1 shrink-0 cursor-pointer"
-            aria-label="FOSS Club IIIT Kalyani - Home"
-          >
-            <FossClubLogo size={32} className="transition-transform duration-200 group-hover:scale-105 shrink-0" />
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="font-bold text-sm sm:text-base lg:text-base xl:text-lg tracking-tight text-white flex items-center gap-1.5 font-mono whitespace-nowrap shrink-0">
-                FOSS Club
-                <span className="text-white font-bold tracking-tight whitespace-nowrap shrink-0">IIIT Kalyani</span>
-              </span>
-              <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] font-mono tracking-wider bg-zinc-800/90 text-emerald-400 border border-zinc-700/80 w-fit shrink-0 whitespace-nowrap">
-                STUDENT CHAPTER
-              </span>
-            </div>
-          </a>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
+          {/* Left Group: Brand Logo & Name (Entire area clickable returning to top/hero) */}
+          <div className="flex items-center shrink-0">
+            <a
+              href="#home"
+              onClick={handleHomeClick}
+              className="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md p-1 cursor-pointer"
+              aria-label="FOSS Club IIIT Kalyani - Return to Top"
+            >
+              <FossClubLogo size={32} className="transition-transform duration-200 group-hover:scale-105 shrink-0" />
+              <div className="flex items-center gap-2 shrink-0">
+                <span className="font-bold text-sm sm:text-base tracking-tight text-white flex items-center gap-1.5 font-mono whitespace-nowrap">
+                  FOSS Club
+                  <span className="text-white font-bold tracking-tight whitespace-nowrap">IIIT Kalyani</span>
+                </span>
+                <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] font-mono tracking-wider bg-zinc-800/90 text-emerald-400 border border-zinc-700/80 w-fit shrink-0 whitespace-nowrap">
+                  STUDENT CHAPTER
+                </span>
+              </div>
+            </a>
+          </div>
 
-          {/* Desktop Navigation Links */}
+          {/* Center Group: Desktop Navigation Links with consistent horizontal spacing */}
           <nav
             aria-label="Main Navigation"
-            className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 text-xs xl:text-sm font-medium text-zinc-300 shrink"
+            className="hidden lg:flex items-center justify-center space-x-1 xl:space-x-1.5 text-xs xl:text-sm font-medium text-zinc-300"
           >
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.replace('#', '');
@@ -184,7 +185,7 @@ export const Navbar: React.FC = () => {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleLinkClick(e, item.href)}
-                  className={`px-2 xl:px-3 py-1.5 rounded-md transition-all text-xs xl:text-sm font-mono whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                  className={`px-2.5 xl:px-3 py-1.5 rounded-md transition-all text-xs xl:text-sm font-mono whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
                     isActive
                       ? 'text-emerald-400 bg-emerald-950/40 border border-emerald-500/30'
                       : 'hover:text-white hover:bg-zinc-800/50'
@@ -196,14 +197,14 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Right Action Controls */}
-          <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
+          {/* Right Group: Action Controls & Mobile Toggle */}
+          <div className="flex items-center gap-2 xl:gap-3 shrink-0">
             {/* GitHub Repo Link Badge */}
             <a
               href="https://github.com/FOSS-Club-IIIT-Kalyani"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex lg:hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#14171b] border border-zinc-800 hover:border-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 shrink-0"
+              className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#14171b] border border-zinc-800 hover:border-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 shrink-0"
               title="View GitHub Organization"
             >
               <Github className="w-3.5 h-3.5 text-zinc-400" />
@@ -217,36 +218,36 @@ export const Navbar: React.FC = () => {
             <a
               href="#community"
               onClick={(e) => handleLinkClick(e, '#community')}
-              className="inline-flex items-center gap-1.5 px-3 xl:px-3.5 py-1.5 rounded-md text-xs font-semibold font-mono tracking-wide bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-sm hover:shadow-emerald-600/20 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 shrink-0 whitespace-nowrap"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 xl:px-3.5 py-1.5 rounded-md text-xs font-semibold font-mono tracking-wide bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-sm hover:shadow-emerald-600/20 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 shrink-0 whitespace-nowrap"
             >
               <span>Join Community</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
-          </div>
 
-          {/* Mobile Menu Hamburger Button */}
-          <div className="flex sm:hidden items-center gap-2">
-            <button
-              ref={toggleBtnRef}
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md text-zinc-400 hover:text-white hover:bg-zinc-800/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-navigation-drawer"
-              aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-zinc-200" /> : <Menu className="w-5 h-5" />}
-            </button>
+            {/* Mobile Menu Hamburger Button */}
+            <div className="flex lg:hidden items-center">
+              <button
+                ref={toggleBtnRef}
+                type="button"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-md text-zinc-400 hover:text-white hover:bg-zinc-800/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-navigation-drawer"
+                aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5 text-zinc-200" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation (attaches cleanly under header) */}
+      {/* Mobile Drawer Navigation (attaches cleanly under header on screens below lg) */}
       {mobileMenuOpen && (
         <div
           id="mobile-navigation-drawer"
           ref={menuRef}
-          className="sm:hidden absolute top-full left-0 right-0 h-[calc(100vh-60px)] bg-[#0b0d0e]/98 backdrop-blur-2xl border-t border-[#1f242c] p-5 z-50 overflow-y-auto flex flex-col justify-between shadow-2xl"
+          className="lg:hidden absolute top-full left-0 right-0 h-[calc(100vh-60px)] bg-[#0b0d0e]/98 backdrop-blur-2xl border-t border-[#1f242c] p-5 z-50 overflow-y-auto flex flex-col justify-between shadow-2xl"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Drawer"
@@ -256,6 +257,15 @@ export const Navbar: React.FC = () => {
               Navigation Menu
             </div>
             <nav className="flex flex-col space-y-1">
+              {/* Top / Hero Action in mobile menu */}
+              <a
+                href="#home"
+                onClick={handleHomeClick}
+                className="px-3 py-2.5 rounded-lg text-base font-mono font-medium text-emerald-400 hover:text-emerald-300 hover:bg-emerald-950/30 flex items-center justify-between transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              >
+                <span>Top / Hero</span>
+                <span className="text-emerald-500/80 text-xs font-mono">↑ Top</span>
+              </a>
               {NAV_ITEMS.map((item) => (
                 <a
                   key={item.label}
