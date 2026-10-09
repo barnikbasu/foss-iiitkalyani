@@ -42,7 +42,7 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
       { prompt: false, text: 'SPDX-License-Identifier: MIT / Apache-2.0' },
       {
         prompt: false,
-        text: '[READY] 100% Free & Open Source toolchain in action',
+        text: '[READY] Open Source toolchain in action',
         highlight: true,
       },
     ],
@@ -53,7 +53,7 @@ const TERMINAL_SCRIPTS: TerminalScript[] = [
     lines: [
       { prompt: true, text: '$ foss-united-cli status --chapter iiit-kalyani' },
       { prompt: false, text: 'Chapter Name: FOSS Club IIIT Kalyani' },
-      { prompt: false, text: 'Chapter Term: 2024–27 | Status: ACTIVE & VERIFIED' },
+      { prompt: false, text: 'Chapter Term: 2026–27 | Status: ACTIVE' },
       { prompt: false, text: 'Location: Kalyani, Nadia District, West Bengal' },
       {
         prompt: false,
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section aria-labelledby="hero-heading" className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-[#1b1f26]">
+    <section id="home" aria-labelledby="hero-heading" className="scroll-mt-24 relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-[#1b1f26]">
       {/* Subtle background ambient mesh */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
@@ -160,32 +160,32 @@ export const Hero: React.FC = () => {
             <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-6 border-t border-[#1e232b] max-w-xl">
               <div>
                 <div className="text-base sm:text-2xl font-bold font-mono text-white tracking-tight">
-                  03 / 2024
+                  2024
                 </div>
                 <div className="text-[10px] sm:text-xs font-mono text-zinc-400 uppercase tracking-wider mt-0.5 truncate">
-                  March 2024
+                  Established
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">Chapter Founded</div>
+                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">March 2024</div>
               </div>
 
               <div>
                 <div className="text-base sm:text-2xl font-bold font-mono text-emerald-400 tracking-tight">
-                  07+
+                  7+
                 </div>
                 <div className="text-[10px] sm:text-xs font-mono text-zinc-400 uppercase tracking-wider mt-0.5 truncate">
-                  Documented Meets
+                  Events &amp; Activities
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">Bootcamps &amp; On-Air</div>
+                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">Sessions Logged</div>
               </div>
 
               <div>
                 <div className="text-base sm:text-2xl font-bold font-mono text-white tracking-tight">
-                  100%
+                  2026–27
                 </div>
                 <div className="text-[10px] sm:text-xs font-mono text-zinc-400 uppercase tracking-wider mt-0.5 truncate">
-                  Open Source
+                  Current Chapter
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">Software Freedom</div>
+                <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">Active Term</div>
               </div>
             </div>
           </div>

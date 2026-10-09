@@ -97,11 +97,11 @@ IIIT Kalyani Student Builder`
         </div>
 
         <h3 id="submit-modal-title" className="text-xl font-bold text-white mb-2">
-          Pitch Your Open-Source Project
+          Share Your Open-Source Project
         </h3>
 
         <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-sans">
-          Whether you&apos;re crafting a command-line tool, an OS utility, or a web platform, our team will review your README, help structure issues for new contributors, and submit nominations for FOSS United student grants.
+          Building a tool, application, or utility? Share your open-source repository with the FOSS Club IIIT Kalyani community for peer feedback, collaboration, and discussion.
         </p>
 
         {submitted && (

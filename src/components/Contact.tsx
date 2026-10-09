@@ -15,7 +15,7 @@ import {
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-20 border-b border-[#1b1f26] relative">
+    <section id="contact" className="py-20 border-b border-[#1b1f26] relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12">

@@ -4,8 +4,25 @@ import { CLUB_METADATA, SOCIAL_LINKS } from '../data/content';
 import { ArrowUp, Heart, Shield, Code, ExternalLink } from 'lucide-react';
 
 export const Footer: React.FC = () => {
-  const scrollToTop = () => {
+  const scrollToTop = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.location.hash) {
+      window.history.pushState(null, '', window.location.pathname + window.location.search);
+    }
+  };
+
+  const handleFooterLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href === '#home' || href === '#') {
+      scrollToTop();
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', href);
+    }
   };
 
   return (
@@ -14,8 +31,13 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Column 1 & 2: Branding & Address */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <FossClubLogo size={36} />
+            <a
+              href="#home"
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded cursor-pointer"
+              aria-label="FOSS Club IIIT Kalyani - Scroll to top"
+            >
+              <FossClubLogo size={36} className="transition-transform duration-200 group-hover:scale-105" />
               <div>
                 <span className="font-bold text-base text-white tracking-tight">
                   FOSS Club <span className="text-zinc-400 font-normal">IIIT Kalyani</span>
@@ -24,7 +46,7 @@ export const Footer: React.FC = () => {
                   Free and Open Source Software Society
                 </div>
               </div>
-            </div>
+            </a>
 
             <p className="text-xs text-zinc-400 leading-relaxed font-sans max-w-sm">
               Free and Open Source Software Club of Indian Institute of Information Technology Kalyani. Fostering hacker culture, software craftsmanship, and collaborative student-led development.
@@ -48,33 +70,75 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2.5">
               <li>
-                <a href="#about" className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                <a
+                  href="#about"
+                  onClick={(e) => handleFooterLinkClick(e, '#about')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
                   Chapter Overview
                 </a>
               </li>
               <li>
-                <a href="#values" className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                <a
+                  href="#values"
+                  onClick={(e) => handleFooterLinkClick(e, '#values')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
                   Why Free &amp; Open Source
                 </a>
               </li>
               <li>
-                <a href="#events" className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                <a
+                  href="#events"
+                  onClick={(e) => handleFooterLinkClick(e, '#events')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
                   Documented Events
                 </a>
               </li>
               <li>
-                <a href="#initiatives" className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                <a
+                  href="#initiatives"
+                  onClick={(e) => handleFooterLinkClick(e, '#initiatives')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
                   Ongoing Initiatives
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                <a
+                  href="#projects"
+                  onClick={(e) => handleFooterLinkClick(e, '#projects')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
                   Source Repositories
                 </a>
               </li>
               <li>
-                <a href="#team" className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                <a
+                  href="#team"
+                  onClick={(e) => handleFooterLinkClick(e, '#team')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
                   Chapter Leadership
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#community"
+                  onClick={(e) => handleFooterLinkClick(e, '#community')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
+                  Community &amp; Join
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={(e) => handleFooterLinkClick(e, '#contact')}
+                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+                >
+                  Direct Contact
                 </a>
               </li>
             </ul>

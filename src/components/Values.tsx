@@ -11,7 +11,7 @@ const VALUE_ICONS: React.ReactNode[] = [
 
 export const Values: React.FC = () => {
   return (
-    <section id="values" className="py-20 border-b border-[#1b1f26] relative">
+    <section id="values" className="py-20 border-b border-[#1b1f26] relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12">

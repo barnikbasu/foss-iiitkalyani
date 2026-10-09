@@ -25,7 +25,7 @@ const PILLAR_ICONS: Record<string, React.ReactNode> = {
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 border-b border-[#1b1f26] relative">
+    <section id="about" className="py-20 border-b border-[#1b1f26] relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -62,16 +62,16 @@ export const About: React.FC = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#161a20] border border-zinc-800 text-[11px] font-mono text-emerald-400 mb-5">
                 <Terminal className="w-3.5 h-3.5" />
-                <span>FROM KERNEL HACKING TO COLLABORATIVE DEPLOYS</span>
+                <span>OPEN SOURCE SOFTWARE &amp; STUDENT COLLABORATION</span>
               </div>
 
               {/* Explanatory Paragraphs */}
               <div className="space-y-4 text-sm sm:text-base text-zinc-300 leading-relaxed font-sans">
                 <p>
-                  <strong className="text-white font-semibold">FOSS Club IIIT Kalyani</strong> was founded to bridge the gap between abstract academic theory and actual production software engineering. By embracing open-source software, students don&apos;t just read code—they audit it, modify it, debug it, and ship changes to global repositories.
+                  <strong className="text-white font-semibold">FOSS Club IIIT Kalyani</strong> is a student-led community focused on Free and Open Source Software (FOSS), software freedom, and practical collaboration.
                 </p>
                 <p>
-                  From our inaugural FOSS Foundation session in early 2024 to multi-day bootcamps, technical podcasts (&apos;FOSS On-Air&apos;), and hands-on GCC build pipeline workshops, we provide a structured launchpad for anyone aspiring to become a genuine builder in the open web.
+                  Through interactive sessions, campus workshops, and online discussions, the club provides an open space for students to learn git workflows, explore community tools, and contribute in the open.
                 </p>
               </div>
             </div>
@@ -129,29 +129,29 @@ export const About: React.FC = () => {
               {/* Lab Visual Container with Code and Lab Details */}
               <div className="rounded-lg bg-[#0b0d10] border border-zinc-800/80 p-4 font-mono text-xs text-zinc-300 relative overflow-hidden mb-4">
                 <div className="text-[11px] text-zinc-500 border-b border-zinc-800 pb-2 mb-3 flex items-center justify-between">
-                  <span>host: iiit-kalyani-lab // session: 0x4F</span>
-                  <span className="text-emerald-500">peer: active</span>
+                  <span>session // collaborative learning</span>
+                  <span className="text-emerald-500">campus lab</span>
                 </div>
 
                 <div className="space-y-2 text-[11px]">
                   <div className="text-zinc-400">
-                    <span className="text-emerald-400">$</span> g++ -Wall -O2 src/engine.cpp -o engine
+                    <span className="text-emerald-400">$</span> git checkout -b feature/open-source-contribution
                   </div>
                   <div className="text-zinc-500">
-                    [gcc-13.2] compiling AST trees... zero warnings.
+                    Switched to a new branch &apos;feature/open-source-contribution&apos;
                   </div>
                   <div className="text-zinc-400">
-                    <span className="text-emerald-400">$</span> git diff --stat upstream/main
+                    <span className="text-emerald-400">$</span> git status
                   </div>
                   <div className="text-emerald-400/90">
-                    + 148 insertions, - 22 deletions (clean rebase)
+                    working tree clean · ready for collaboration
                   </div>
                   <div className="p-2 rounded bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-[11px] mt-2">
                     <div className="text-emerald-400 font-semibold mb-0.5 flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" />
-                      Student PR #42 Approved
+                      Collaborative Discussion Active
                     </div>
-                    Co-authored-by: IIIT Kalyani FOSS Member
+                    FOSS Club IIIT Kalyani Community
                   </div>
                 </div>
               </div>

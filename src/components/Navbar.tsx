@@ -3,6 +3,7 @@ import { FossClubLogo } from './Logos';
 import { Menu, X, ArrowUpRight, Github } from 'lucide-react';
 
 const NAV_ITEMS = [
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Values', href: '#values' },
   { label: 'Events', href: '#events' },
@@ -10,6 +11,7 @@ const NAV_ITEMS = [
   { label: 'Projects', href: '#projects' },
   { label: 'Team', href: '#team' },
   { label: 'Community', href: '#community' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export const Navbar: React.FC = () => {
@@ -28,9 +30,17 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Monitor active section via IntersectionObserver
+  // Monitor active section via IntersectionObserver & scroll position
   useEffect(() => {
-    const sectionIds = ['about', 'values', 'events', 'initiatives', 'projects', 'team', 'community'];
+    const handleScrollActive = () => {
+      // If user is at or near top, no section is active (or home)
+      if (window.scrollY < 180) {
+        setActiveSection('');
+      }
+    };
+    window.addEventListener('scroll', handleScrollActive, { passive: true });
+
+    const sectionIds = ['about', 'values', 'events', 'initiatives', 'projects', 'team', 'community', 'contact'];
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -39,11 +49,11 @@ export const Navbar: React.FC = () => {
 
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && window.scrollY >= 180) {
             setActiveSection(id);
           }
         },
-        { rootMargin: '-25% 0px -55% 0px' }
+        { rootMargin: '-20% 0px -50% 0px' }
       );
 
       observer.observe(el);
@@ -51,8 +61,27 @@ export const Navbar: React.FC = () => {
     });
 
     return () => {
+      window.removeEventListener('scroll', handleScrollActive);
       observers.forEach((obs) => obs.disconnect());
     };
+  }, []);
+
+  // Listen to popstate (browser back/forward button navigation)
+  useEffect(() => {
+    const handlePopState = () => {
+      const hash = window.location.hash;
+      if (!hash || hash === '#' || hash === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveSection('');
+      } else {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   // Handle escape key to close mobile menu
@@ -82,10 +111,31 @@ export const Navbar: React.FC = () => {
     };
   }, [mobileMenuOpen]);
 
+  // Dedicated Home / Logo Click handler: Always scrolls to absolute top & clears hash
+  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveSection('');
+    if (window.location.hash) {
+      window.history.pushState(null, '', window.location.pathname + window.location.search);
+    }
+  };
+
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
     toggleBtnRef.current?.focus();
+
+    if (href === '#home' || href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setActiveSection('');
+      if (window.location.hash) {
+        window.history.pushState(null, '', window.location.pathname + window.location.search);
+      }
+      return;
+    }
+
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -105,8 +155,9 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Brand Logo & Name */}
           <a
-            href="#"
-            className="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md p-1 shrink-0"
+            href="#home"
+            onClick={handleHomeClick}
+            className="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md p-1 shrink-0 cursor-pointer"
             aria-label="FOSS Club IIIT Kalyani - Home"
           >
             <FossClubLogo size={32} className="transition-transform duration-200 group-hover:scale-105 shrink-0" />

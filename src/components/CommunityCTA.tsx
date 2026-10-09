@@ -3,7 +3,7 @@ import { Send, Github, Radio, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export const CommunityCTA: React.FC = () => {
   return (
-    <section id="community" className="py-20 border-b border-[#1b1f26] relative">
+    <section id="community" className="py-20 border-b border-[#1b1f26] relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl bg-gradient-to-br from-[#12161c] to-[#0c0e12] border border-[#232a35] p-8 sm:p-12 relative overflow-hidden shadow-2xl">
           {/* Subtle green ambient spotlight */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StatusTicker } from './components/StatusTicker';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -15,6 +15,28 @@ import { ProjectSubmitModal } from './components/ProjectSubmitModal';
 
 export default function App() {
   const [pitchModalOpen, setPitchModalOpen] = useState(false);
+
+  // Requirement 1: Refresh -> Top & prevent browser scroll restoration
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // If page is loaded with no hash or refreshed, ensure absolute top scroll
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    } else {
+      // If there is an existing hash on fresh load, smoothly navigate to it after layout mount
+      const targetEl = document.querySelector(window.location.hash);
+      if (targetEl) {
+        setTimeout(() => {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#0b0d0e] text-[#e2e8f0] selection:bg-emerald-500 selection:text-black">
